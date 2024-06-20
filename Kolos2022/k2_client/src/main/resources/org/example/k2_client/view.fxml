@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Definicja głównego kontenera VBox -->
+<VBox alignment="CENTER_LEFT" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.k2_client.ClientController" >
+    <!-- Ustawienie paddingu (marginesów wewnętrznych) -->
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <!-- Definicja dzieci kontenera VBox -->
+    <children>
+        <!-- Pole tekstowe do filtrowania słów, powiązane z metodą onEnter kontrolera -->
+        <TextField fx:id="filterField" onAction="#onEnter"/>
+        <!-- Lista do wyświetlania słów, ustawiona aby rosnąć w pionie -->
+        <ListView fx:id="wordList" VBox.vgrow="ALWAYS" />
+        <!-- Kontener HBox do układu poziomego -->
+        <HBox spacing="10.0">
+            <children>
+                <!-- Etykieta tekstowa -->
+                <Label text="Total words:" />
+                <!-- Etykieta do wyświetlania liczby słów, powiązana z kontrolerem -->
+                <Label fx:id="wordCountLabel" alignment="CENTER_RIGHT" text="0" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
+
+<!--/Podsumowanie:
+Deklaracje XML:
+
+<?xml version="1.0" encoding="UTF-8"?>: Deklaracja wersji XML i kodowania.
+<?import javafx.geometry.*?>, <?import javafx.scene.control.*?>, <?import javafx.scene.layout.*?>: Importy klas JavaFX do wykorzystania w FXML.
+Główny kontener VBox:
+
+alignment="CENTER_LEFT": Ustawia wyrównanie dzieci kontenera do środka po lewej stronie.
+spacing="10.0": Ustawia odstęp między dziećmi na 10 pikseli.
+xmlns="http://javafx.com/javafx/16": Deklaracja przestrzeni nazw JavaFX.
+xmlns:fx="http://javafx.com/fxml/1": Deklaracja przestrzeni nazw FXML.
+fx:controller="org.example.k2_client.ClientController": Powiązanie kontrolera ClientController z tym plikiem FXML.
+Padding (marginesy wewnętrzne):
+
+bottom="10.0" left="10.0" right="10.0" top="10.0": Ustawia marginesy wewnętrzne na 10 pikseli z każdej strony.
+Dzieci kontenera VBox:
+
+TextField:
+fx:id="filterField": Identyfikator pola tekstowego, powiązany z kontrolerem.
+onAction="#onEnter": Powiązanie metody onEnter z kontrolera, wywoływanej po naciśnięciu Enter.
+ListView:
+fx:id="wordList": Identyfikator listy, powiązany z kontrolerem.
+VBox.vgrow="ALWAYS": Ustawia, aby lista rosła w pionie.
+HBox:
+spacing="10.0": Ustawia odstęp między dziećmi na 10 pikseli.
+Dzieci kontenera HBox:
+Label:
+text="Total words:": Tekst etykiety.
+Label:
+fx:id="wordCountLabel": Identyfikator etykiety, powiązany z kontrolerem.
+alignment="CENTER_RIGHT": Ustawia wyrównanie tekstu do środka po prawej stronie.
+text="0": Tekst początkowy etykiety.-->
+
